@@ -2,37 +2,44 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, user-scalable=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Healthcare Chatbot</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
     <style>
-       
+        /* .header-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 15px 20px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        } */
         .header-top {
     position: fixed;   /* stays at top */
     top: 0;
     left: 0;
-    right: 0;
     transform: none;
 
     display: flex;
-    flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
 
     width: 100%;
     max-width: 100%;
-    height: auto;
+    height: 64px;
     min-height: 64px;
     box-sizing: border-box;
 
     background: linear-gradient(135deg, #1abc9c 0%, #16a085 100%);
     color: white;
-    padding: 12px 15px;
-    border-radius: 0;
+    padding: 0 15px;
+    border-radius: 0 0 10px 10px;
     margin: 0;
     z-index: 100;
     box-shadow: 0 4px 6px rgba(26, 188, 156, 0.2);
-    gap: 10px;
 }
         .header-info {
             display: flex;
@@ -44,7 +51,6 @@
             display: flex;
             align-items: center;
             gap: 10px;
-            flex-shrink: 0;
         }
 
         .user-avatar {
@@ -147,8 +153,7 @@
                 flex-direction: row;
                 flex-wrap: wrap;
                 gap: 8px;
-                height: auto;
-                min-height: 50px;
+                height: 64px;
                 padding: 0 12px;
             }
 
@@ -156,24 +161,7 @@
                 flex: 1 1 60%;
                 min-width: 160px;
                 align-items: center;
-                overflow: visible;
-                gap: 10px;
-            }
-
-            .user-info {
-                gap: 8px;
-                flex-shrink: 1;
-            }
-
-            .user-avatar {
-                width: 36px;
-                height: 36px;
-                font-size: 14px;
-            }
-
-            .user-info div:last-child {
-                font-size: 12px;
-                line-height: 1.2;
+                overflow: hidden;
             }
 
             .header-buttons {
@@ -189,125 +177,6 @@
                 padding: 6px 8px;
                 font-size: 12px;
                 white-space: nowrap;
-            }
-
-            .header-info h2 {
-                font-size: 16px;
-                margin: 0;
-                flex-shrink: 0;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .header-top {
-                min-height: 32px;
-                padding: 4px 6px;
-                gap: 4px;
-            }
-
-            .header-info {
-                flex: 0 1 auto;
-                width: auto;
-                max-width: 50%;
-                gap: 3px;
-                overflow: hidden;
-            }
-
-            .header-info h2 {
-                font-size: 11px;
-                margin: 0;
-                flex-shrink: 0;
-                white-space: nowrap;
-            }
-
-            .user-info {
-                width: auto;
-                gap: 3px;
-                flex-shrink: 1;
-                min-width: 0;
-            }
-
-            .user-avatar {
-                width: 24px;
-                height: 24px;
-                font-size: 10px;
-                flex-shrink: 0;
-            }
-
-            .user-info div:last-child {
-                font-size: 9px;
-                min-width: 0;
-                overflow: hidden;
-                text-overflow: ellipsis;
-            }
-
-            .user-info div:last-child div:first-child {
-                font-weight: 500;
-                white-space: nowrap;
-            }
-
-            .user-info div:last-child div:last-child {
-                font-size: 8px;
-                opacity: 0.9;
-                line-height: 1;
-            }
-
-            .header-buttons {
-                flex: 1 1 auto;
-                width: auto;
-                justify-content: flex-end;
-                min-width: 0;
-                gap: 3px;
-            }
-
-            .header-buttons a,
-            .header-buttons button {
-                flex: 0 1 auto;
-                padding: 4px 6px;
-                font-size: 10px;
-                min-width: auto;
-                white-space: nowrap;
-            }
-        }
-
-        @media (max-width: 360px) {
-            .header-top {
-                min-height: 32px;
-                padding: 3px 4px;
-                gap: 3px;
-            }
-
-            .header-info h2 {
-                font-size: 10px;
-            }
-
-            .header-info {
-                max-width: 45%;
-                gap: 2px;
-            }
-
-            .user-avatar {
-                width: 22px;
-                height: 22px;
-                font-size: 9px;
-            }
-
-            .user-info div:last-child {
-                font-size: 8px;
-            }
-
-            .user-info div:last-child div:last-child {
-                font-size: 7px;
-            }
-
-            .header-buttons {
-                gap: 2px;
-            }
-
-            .header-buttons a,
-            .header-buttons button {
-                padding: 3px 5px;
-                font-size: 9px;
             }
         }
         .watermark {

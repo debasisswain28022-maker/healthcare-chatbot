@@ -14,7 +14,6 @@ body {
     align-items: flex-start;
     padding-top: 100px;
     background: #e8f8f5; /* soft healing teal */
-    padding-bottom: 20px;
 }
 
 /* ===============================
@@ -142,12 +141,9 @@ body {
 =================================*/
 .chat-input {
     display: flex;
-    flex-wrap: wrap;
     padding: 14px;
     border-top: 1px solid #d4f1ea;
     background: #ffffff;
-    gap: 10px;
-    align-items: center;
 }
 
 .chat-input input {
@@ -158,8 +154,6 @@ body {
     outline: none;
     font-size: 14px;
     transition: 0.3s ease;
-    min-width: 200px;
-    order: 1;
 }
 
 .chat-input input:focus {
@@ -167,8 +161,9 @@ body {
     box-shadow: 0 0 0 2px rgba(26,188,156,0.15);
 }
 
-/* Send Button & Diagnose Button */
+/* Send Button */
 .chat-input button {
+    margin-left: 10px;
     padding: 11px 18px;
     border: none;
     background: #1abc9c;
@@ -177,21 +172,10 @@ body {
     font-weight: 600;
     cursor: pointer;
     transition: 0.2s ease;
-    white-space: nowrap;
-    order: 2;
 }
 
 .chat-input button:hover {
     background: #095a87;
-}
-
-.chat-input .diagnose-btn {
-    background: #3498db;
-    order: 3;
-}
-
-.chat-input .diagnose-btn:hover {
-    background: #2980b9;
 }
 
 /* ===============================
@@ -404,19 +388,18 @@ body.dark #dark-toggle {
 =================================*/
 @media (max-width: 768px) {
     body {
-        padding-top: 40px;
-        padding-bottom: 10px;
+        padding-top: 130px;
         justify-content: flex-start;
         align-items: center;
     }
 
     .chat-container {
-        width: min(95vw, 500px);
+        width: min(98vw, 500px);
         min-width: auto;
-        height: calc(100vh - 65px);
-        max-height: calc(100vh - 65px);
+        height: calc(100vh - 170px);
+        max-height: calc(100vh - 150px);
         border-radius: 10px;
-        margin: 5px auto;
+        margin: 0 auto 10px;
         box-shadow: 0 8px 22px rgba(26, 188, 156, 0.12);
     }
 
@@ -426,36 +409,28 @@ body.dark #dark-toggle {
     }
 
     .chat-box {
-        padding: 10px;
-        gap: 10px;
+        padding: 12px;
     }
 
     .bot-message,
     .user-message {
-        max-width: 85%;
-        font-size: 14px;
-        padding: 10px 14px;
+        max-width: 100%;
+        font-size: 15px;
     }
 
     .chat-input {
-        padding: 8px;
-        gap: 6px;
-        flex-wrap: wrap;
+        padding: 10px;
+        gap: 8px;
     }
 
     .chat-input input {
-        font-size: 14px;
+        font-size: 15px;
         padding: 10px;
-        flex: 1 1 100%;
-        min-width: 100%;
-        order: 1;
     }
 
     .chat-input button {
         padding: 10px 12px;
-        font-size: 13px;
-        flex: 1 1 calc(50% - 3px);
-        order: 2;
+        font-size: 14px;
     }
 
     .header-top {
@@ -464,167 +439,36 @@ body.dark #dark-toggle {
         right: 0;
         transform: none;
         border-radius: 0;
-        padding: 8px 12px;
-        height: auto;
-        min-height: 50px;
-        flex-wrap: wrap;
-        gap: 6px;
+        padding: 12px;
     }
 
-    .header-info {
-        width: 100%;
-        flex-wrap: wrap;
-        order: 1;
-    }
-
-    .user-info {
-        gap: 8px;
-    }
-
-    .user-avatar {
-        width: 36px;
-        height: 36px;
-        font-size: 14px;
-    }
-
-    .header-info h2 {
-        font-size: 16px;
-        margin: 0;
-        flex: 1 1 auto;
-    }
-
-    .user-info div:last-child {
-        font-size: 12px;
-    }
-
+    .header-info,
     .header-buttons {
         width: 100%;
-        order: 2;
-        gap: 4px;
+        flex-wrap: wrap;
     }
 
     .header-buttons a,
     .header-buttons button {
-        flex: 1 1 auto;
-        padding: 8px 8px;
-        font-size: 12px;
+        flex: 1 1 48%;
+        margin: 3px 2px;
     }
 
     .watermark {
-        font-size: 11px;
+        font-size: 12px;
     }
 }
 
 @media (max-width: 480px) {
-    body {
-        padding-top: 35px;
-    }
-
     .chat-container {
-        width: 100vw;
-        min-width: unset;
-        max-width: 100vw;
-        height: calc(100vh - 60px);
-        max-height: calc(100vh - 60px);
-        border-radius: 0;
-        margin: 0;
+        height: calc(100vh - 180px);
     }
 
     .chat-header {
-        padding: 10px;
-        font-size: 14px;
-    }
-
-    .chat-box {
-        padding: 8px;
-    }
-
-    .bot-message,
-    .user-message {
-        max-width: 90%;
-        font-size: 13px;
-        padding: 8px 12px;
-    }
-
-    .chat-input {
-        padding: 6px;
-        gap: 4px;
-    }
-
-    .chat-input input {
-        font-size: 13px;
-        padding: 8px;
+        font-size: 15px;
     }
 
     .chat-input button {
-        padding: 8px 10px;
-        font-size: 12px;
-        flex: 1 1 calc(50% - 2px);
-    }
-
-    .header-top {
-        padding: 6px 8px;
-        height: auto;
-        min-height: 45px;
-        gap: 4px;
-    }
-
-    .header-info h2 {
-        font-size: 14px;
-    }
-
-    .user-info div {
-        font-size: 11px;
-    }
-
-    .user-avatar {
-        width: 32px;
-        height: 32px;
-        font-size: 12px;
-        border-width: 1px;
-    }
-
-    .header-buttons a,
-    .header-buttons button {
-        padding: 6px 6px;
-        font-size: 11px;
-    }
-
-    .watermark {
-        font-size: 10px;
-    }
-}
-
-@media (max-width: 360px) {
-    body {
-        padding-top: 35px;
-    }
-
-    .chat-container {
-        height: calc(100vh - 55px);
-    }
-
-    .header-info h2 {
-        font-size: 13px;
-    }
-
-    .user-info {
-        gap: 6px;
-    }
-
-    .user-avatar {
-        width: 30px;
-        height: 30px;
-    }
-
-    .chat-header {
-        font-size: 13px;
-        padding: 8px;
-    }
-
-    .header-buttons a,
-    .header-buttons button {
-        padding: 5px 5px;
-        font-size: 10px;
+        padding: 9px 10px;
     }
 }
